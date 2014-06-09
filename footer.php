@@ -1,6 +1,6 @@
     <div id="footer">
       <div class="f-container">
-        <span class="about">Medya ve Politikacıların Sağlaması</span> <br />
+        <span class="about"><?php bloginfo('description'); ?></span> <br />
         <span class="social-media">
           <a href="https://twitter.com/dogrulat">
             <img src="<?php bloginfo('template_directory'); ?>/img/twitter-logo.png" />
