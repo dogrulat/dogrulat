@@ -3,6 +3,8 @@
 <div class="container">
 
     <div class="posts">
+
+        <ul id="col_1" class="col">
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
         
         <?php 
@@ -13,7 +15,7 @@
             $thumbID = get_the_post_thumbnail( $post->ID, 'background', $imgsrcparam );
         ?>
 
-        <div class="post-preview">
+        <li><div class="post-preview">
             <a href="<?php the_permalink() ?>"><?php echo "$thumbID"; ?></a>
             <div class="hometitle">
 
@@ -40,14 +42,14 @@
                 </span>
             </div>
 
-        </div> <!-- end of preview" -->
-
+        </div> <!-- end of post-preview" -->
+        </li>
         <?php 
             endwhile; 
             else :
             endif;
         ?>
-
+    </ul>
     </div> <!-- end of posts -->
 
     <br style="clear: both" />

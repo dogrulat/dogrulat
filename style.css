@@ -20,11 +20,21 @@ a:link, a:visited {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 img.aligncenter {
   margin-left: auto;
   margin-right: auto;
   display: block;
   clear: both;
+}
+
+.container {
+  padding-left: 6px;
 }
 
 .navbar-brand {
@@ -88,7 +98,7 @@ ul.custom-navbar {
 }
 
 .posts {
-  padding: 20px 5px;
+  padding: 20px 0px;
   
 }
 
@@ -97,8 +107,8 @@ ul.custom-navbar {
 }
 
 .post-preview {
-  max-width: 325px;
-  min-width: 325px;
+  max-width: 305px;
+  min-width: 305px;
   float: none;
   margin: auto;
   margin-bottom: 20px;
@@ -112,7 +122,7 @@ ul.custom-navbar {
   width: 285px;
   margin-top: 15px;
   
-  margin-left: 20px;
+  margin-left: 10px;
   border-radius: 2px;
 }
 
@@ -302,16 +312,32 @@ p.truthiness {
   }
 
   .navbar-brand {
-    display: none;
+    display: none;  
   }
 
   .custom-navbar li:last-of-type {
     display: block;
   }
 
+  .posts {
+    display: flex;
+    width: 660px;
+    margin: auto;
+    padding-left: 5px;
+  }
+
   .post-preview {
-    margin: 10px 10px 10px 10px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  ul.col {
     float: left;
+    margin-right: 15px;
+  }
+
+  ul.col:last-of-type {
+    margin-right: 0;
   }
 
   .post {
@@ -319,11 +345,24 @@ p.truthiness {
     max-width: 720px;
   }
 
+
 }
 
-@media (min-width: 940px) {
-  posts {
-    width: 940px;
+@media (min-width: 992px) {
+  .posts {
+    display: flex;
+    margin: auto;
+    width: 960px;
+    padding-left: 5px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .posts {
+    display: flex;
+    margin: auto;
+    max-width: 1050px;
   }
 
 }
