@@ -13,30 +13,14 @@
             $thumbID = get_the_post_thumbnail( $post->ID, 'background', $imgsrcparam );
         ?>
 
-        <div class="preview">
+        <div class="post-preview">
             <a href="<?php the_permalink() ?>"><?php echo "$thumbID"; ?></a>
             <div class="hometitle">
 
             <?php
                 $truthiness = trim(get_post_meta( $post->ID, 'post_truthiness', true));
-                $level = 'yalan';
                 if($truthiness !== '') {
-                    switch($truthiness) {
-                    case 'DOĞRU':
-                            $level = 'dogru';
-                            break;
-                        case 'ÇOĞU DOĞRU':
-                            $level = 'cogudogru';
-                            break;
-                    case 'YARI DOĞRU':
-                            $level = 'yaridogru';
-                            break;
-                        case 'AZ DOĞRU':
-                            $level = 'azdogru';
-                            break;
-                        default:
-                        break;  
-                    }
+                    $level = get_truthiness_level($truthiness);
                     printf('<span class="truthiness truthiness-%s">%s</span>', $level, $truthiness);
                 }
             ?>
@@ -65,6 +49,12 @@
         ?>
 
     </div> <!-- end of posts -->
+
+    <br style="clear: both" />
+
+    <div class="navlinks">
+        <?php echo get_default_pagination(); ?>
+    </div>
 
 </div><!-- /.container -->
 
