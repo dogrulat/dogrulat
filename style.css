@@ -55,6 +55,11 @@ ul.custom-navbar {
     display: none;
 }
 
+li.li-search {
+  float: right;
+  font-size: 18px;
+}
+
 button.btn-search {
   color: white;
   width: 44px;

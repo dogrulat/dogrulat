@@ -64,12 +64,8 @@
 
         <div class="collapse navbar-collapse deneme">
           <ul class="nav navbar-nav custom-navbar">
-            <li><a href="#">Politikacılar</a></li>
-            <li><a href="#">Medya</a></li>
-            <li><a href="#">Sosyal Medya</a></li>
-            <li><a href="#">Verilen Sözler</a></li>
-            <li><a href="#">Hakkımızda</a></li>
-            <li><a href="#" data-toggle="collapse" data-target=".search-collapse">Ara</a></li>
+            <?php echo build_menu_items(); ?>
+            <li class="li-search"><a href="#" data-toggle="collapse" data-target=".search-collapse" title="ara" class="glyphicon glyphicon-search"></a></li>
           </ul>
         </div><!--/.nav-collapse -->
 
