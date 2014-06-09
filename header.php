@@ -19,7 +19,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="http://www.dogrulat.com/wp-content/uploads/2014/05/favicon.png" type="image/x-icon">
 
-    <title>Doğrulat - Medya ve Politikacıların Sağlaması</title>
+    <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -43,10 +43,11 @@
 
       <div class="container">
         <div class="header-logo">
-            <a href="#">
+            <a href="<?php echo home_url(); ?>">
                 <img src="http://www.dogrulat.com/wp-content/uploads/2014/05/dogrulat_logo2.png" />
             </a>
         </div>
+
         <div class="navbar-header deneme">
           <button type="button" class="navbar-toggle custom-border" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -57,7 +58,7 @@
           <button type="button" class="navbar-toggle custom-border btn-search" data-toggle="collapse" data-target=".search-collapse">
             <span class="glyphicon glyphicon-search"></span>
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="<?php  echo home_url(); ?>">
             <img src="http://www.dogrulat.com/wp-content/uploads/2014/05/dogrulat_logo2.png" height="46"/>
           </a>
         </div>
@@ -70,7 +71,9 @@
         </div><!--/.nav-collapse -->
 
         <div class="collapse search-collapse">
-            <input type="text" class="form-control" placeholder="Doğrulat.com'da Ara" />
+          <form method="get" action="<?php bloginfo('url'); ?>/">
+            <input type="text" class="form-control" placeholder="Doğrulat.com'da Ara" name="s"/>
+          </form>
         </div><!--/.search-collapse -->
       </div>
     </div>
