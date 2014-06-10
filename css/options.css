@@ -1,0 +1,11 @@
+.form-table {
+    width: inherit;
+}
+
+form input[type=text] {
+    width: 300px;
+}
+
+form tr {
+    border-bottom: 1px solid #C4C4C4;
+}

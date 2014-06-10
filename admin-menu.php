@@ -4,7 +4,13 @@
      * http://www.sitepoint.com/wordpress-options-panel/
      */
     add_action('admin_menu', 'create_theme_options_page');
-   
+    add_action('admin_head', 'admin_register_head');
+    
+    function admin_register_head() {
+        $url = get_bloginfo('template_directory') . '/css/options.css';
+        echo "<link rel='stylesheet' href='$url' />";
+    }
+
     function create_theme_options_page() {
         add_theme_page('Theme Options', 'Theme Options', 'administrator', 'options.php', 'build_options_page');
     }
