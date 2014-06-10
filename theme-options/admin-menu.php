@@ -7,7 +7,7 @@
     add_action('admin_head', 'admin_register_head');
     
     function admin_register_head() {
-        $url = get_bloginfo('template_directory') . '/css/options.css';
+        $url = get_bloginfo('template_directory') . '/theme-options/options.css';
         echo "<link rel='stylesheet' href='$url' />";
     }
 
