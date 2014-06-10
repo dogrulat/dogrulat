@@ -1,13 +1,16 @@
 <?php get_header(); ?>
 
 <div id="main">
+    <?php get_sidebar(); ?>
+
     <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
         <div class="post">
             <h1 id="post-title">
             <?php 
                 $truthiness = trim(get_post_meta( $post->ID, 'post_truthiness', true));
-                            if($truthiness!=='') {
-                    echo('[' . $truthiness . ']');
+                if($truthiness!=='') {
+                    $level = get_truthiness_level($truthiness);
+                    printf('<span class="title-truth truthiness-%s">%s</span>', $level, $truthiness);
                 }
             ?> <?php the_title(); ?>
             </h1>

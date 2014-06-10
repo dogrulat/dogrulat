@@ -185,7 +185,7 @@ p.truthiness {
 
 .truthiness-azdogru {
     color: rgba(255, 186, 0, 1) !important;
-    background-color: #746C6C !important;
+    /* background-color: #746C6C !important; */
 }
 
 .truthiness-yaridogru {
@@ -253,7 +253,16 @@ p.truthiness {
 }
 
 .post {
-  padding-left: 15px;
+  padding-left: 5px;
+}
+
+.post .title-truth {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#sidebar {
+  display: none;
 }
 
 .post h1 {
@@ -300,6 +309,44 @@ p.truthiness {
   padding-bottom:15px;
 }
 
+#sidebar {
+  width: 260px;
+  float: left;
+  clear: left;
+  position: fixed;
+}
+
+#truth-panel {
+  text-align: center;
+  margin-left: 5px;
+}
+
+#truth-panel h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#recent-posts {
+  margin-top: 30px;
+  margin-left: 5px;
+}
+
+#recent-posts h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+}
+
+#recent-posts ul {
+  list-style: inherit;
+  font-size: 12px;
+}
+
+#recent-posts li {
+  padding-bottom: 2px;
+}
 
 @media (min-width: 768px) {
   body {
@@ -340,11 +387,16 @@ p.truthiness {
     margin-right: 0;
   }
 
+  #main {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .post {
     margin: auto;
     max-width: 720px;
   }
-
 
 }
 
@@ -356,6 +408,24 @@ p.truthiness {
     padding-left: 5px;
   }
 
+  #main {
+    width: 970px;
+    padding-left: 6px;
+  }
+
+  #sidebar {
+    display: block;
+  }
+
+  .post {
+    margin: 0;
+    margin-left: 260px;
+  }
+
+  .post .title-truth {
+    display: none;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -365,4 +435,57 @@ p.truthiness {
     max-width: 1050px;
   }
 
+  #main {
+    width: 1170px;
+  }
+
+}
+
+.truth-level {
+  min-width: 250px;
+  max-width: 250px;
+  height: 40px;
+  border-radius: 4px;
+  
+  background: -moz-linear-gradient(left, red, yellow, green); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, red), color-stop(50%, yellow), color-stop(100%, green)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, red, yellow, green); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, red, yellow, green); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, red, yellow, green); /* IE10+ */
+  background: linear-gradient(to right, red, yellow, green); /* W3C */
+}
+
+.level {
+  position: relative;
+  line-height: 40px;
+  left: 125px;
+  background-image: url('img/triangle-16.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+  -moz-transition: left 1s;
+  transition: left 1s;
+  z-index: 100;
+  color: #eee;
+}
+
+.truth-level .level-dogru {
+  left: 234px;
+}
+
+.truth-level .level-azdogru {
+  left: 83px;
+}
+
+.truth-level .level-yaridogru {
+  left: 118px;
+}
+
+.truth-level .level-cogudogru {
+  left: 164px;
+}
+
+.truth-level .level-yalan {
+  left: 0;
 }
