@@ -12,11 +12,19 @@
                 'alt'   => trim(strip_tags( $post->post_excerpt )),
                 'title' => trim(strip_tags( $post->post_title )),
             );
-            $thumbID = get_the_post_thumbnail( $post->ID, 'background', $imgsrcparam );
         ?>
 
         <li><div class="post-preview">
-            <a href="<?php the_permalink() ?>"><?php echo "$thumbID"; ?></a>
+            <a href="<?php the_permalink() ?>">
+                <?php  
+                    if(has_post_thumbnail()) {
+                        the_post_thumbnail();
+                    }
+                    else {
+                        echo '<img src="' . get_bloginfo('template_directory') . '/img/thumbnail.png" />';
+                    }
+                ?>
+            </a>
             <div class="hometitle">
 
             <?php

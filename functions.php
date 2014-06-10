@@ -1,13 +1,4 @@
 <?php
-
-    function create_options_page() {
-        echo '';
-    }
-
-    function register_options_page() {
-        add_theme_page("Options", "Options", 'edit_themes', 'options.php', 'create_options_page');
-    }
-
     function build_menu_items() {
         $menu_list = '';
         $menu_name = '';
@@ -39,7 +30,6 @@
     }
     
     add_action( 'init', 'register_default_menu' );
-    add_action('admin_menu', 'register_options_page');
 
     function get_default_pagination() {
         global $wp_query;
@@ -80,4 +70,9 @@
 
         return $level;
     }
+
+    require_once(ABSPATH . '/wp-admin/includes/template.php');
+    require_once('admin-menu.php');
+
+    add_theme_support('post-thumbnails');
 ?>

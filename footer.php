@@ -1,11 +1,12 @@
+<?php $theme_options = get_option('theme_options'); ?>
     <div id="footer">
       <div class="f-container">
         <span class="about"><?php bloginfo('description'); ?></span> <br />
         <span class="social-media">
-          <a href="https://twitter.com/dogrulat">
+          <a href="<?php echo $theme_options['twitter_url']; ?>">
             <img src="<?php bloginfo('template_directory'); ?>/img/twitter-logo.png" />
           </a>
-          <a href="https://facebook.com/dogrulat">
+          <a href="<?php echo $theme_options['facebook_url']; ?>">
             <img src="<?php bloginfo('template_directory'); ?>/img/fb-logo.png" />
           </a>
         </span><br />

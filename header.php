@@ -9,6 +9,20 @@
  * @since Dogrulat 1.0
  */
 ?>
+<?php 
+
+$theme_options = get_option('theme_options');
+$template_directory = get_bloginfo('template_directory');
+
+if(trim($theme_options['header_logo_url'])==='') {
+  $theme_options['header_logo_url'] = $template_directory . '/img/dogrulat_logo.png';
+}
+
+if(trim($theme_options['favicon_url'])==='') {
+  $theme_options['favicon_url'] = $template_directory . '/img/favicon.png';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="http://www.dogrulat.com/wp-content/uploads/2014/05/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo $theme_options['favicon_url']; ?>" type="image/x-icon">
 
     <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
 
@@ -44,7 +58,7 @@
       <div class="container">
         <div class="header-logo">
             <a href="<?php echo home_url(); ?>">
-                <img src="http://www.dogrulat.com/wp-content/uploads/2014/05/dogrulat_logo2.png" />
+                <img src="<?php echo $theme_options['header_logo_url']; ?>" />
             </a>
         </div>
 
