@@ -20,6 +20,14 @@ a:link, a:visited {
   text-decoration: none;
 }
 
+strong a:before {
+  display: block;
+  content: " ";
+  margin-top: -55px;
+  height: 55px;
+  visibility: hidden;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -351,6 +359,11 @@ p.truthiness {
 @media (min-width: 768px) {
   body {
    padding-top: 200px;
+  }
+
+  strong a:before {
+    margin-top: -210px;
+    height: 210px;
   }
   
   .header-logo {
