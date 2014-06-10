@@ -72,7 +72,7 @@
     }
 
     require_once(ABSPATH . '/wp-admin/includes/template.php');
-    require_once('admin-menu.php');
+    require_once('theme-options/admin-menu.php');
 
     add_theme_support('post-thumbnails');
 ?>
