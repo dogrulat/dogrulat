@@ -6,8 +6,14 @@
     }
 
     function build_menu_items() {
+        $menu_list = '';
 
-        $menu_location = get_nav_menu_locations()['header-menu'];
+        $menu_locations = get_nav_menu_locations();
+        if(!isset($menu_locations)) {
+            return '';
+        } 
+
+        $menu_location = $menu_locations['header-menu'];
 
         if (isset($menu_location)) {
             $menu_items = wp_get_nav_menu_items($menu_location);
