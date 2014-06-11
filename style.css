@@ -377,6 +377,12 @@ p.truthiness {
   margin-left: 5px;
 }
 
+#sharing .ssba img {
+    width: 48px;
+    margin-bottom: 8px;
+    margin-right: 12px;
+}
+
 #sharing .fb-share {
   margin-bottom: 5px;
 }
@@ -547,4 +553,13 @@ p.truthiness {
 
 .options-header h1 {
   font-size: 12px;
+}
+
+.no-posts {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+  font-size: 30px;
 }

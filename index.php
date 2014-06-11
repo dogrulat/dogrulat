@@ -2,11 +2,11 @@
 
 <div class="container">
 
-    <div class="posts">
+        <?php if(have_posts()) { ?>
 
-        <ul id="col_1" class="col">
-        <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-        
+        <div class="posts">
+            <ul id="col_1" class="col">
+        <?php while(have_posts()) : the_post(); ?>
         <?php 
             $imgsrcparam = array(
                 'alt'   => trim(strip_tags( $post->post_excerpt )),
@@ -51,13 +51,19 @@
 
         </div> <!-- end of post-preview" -->
         </li>
+
         <?php 
             endwhile; 
-            else :
-            endif;
         ?>
-    </ul>
-    </div> <!-- end of posts -->
+        </ul>
+        </div> <!-- end of posts -->
+        
+        <?php 
+            }
+            else {
+                echo '<h2 class="no-posts">' . pll__("No Posts") . '</h2>';
+            }
+        ?>
 
     <br style="clear: both" />
 

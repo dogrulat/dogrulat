@@ -25,6 +25,8 @@
         pll_register_string("Newer", "Newer");
 
         pll_register_string("Tagline", "Tagline");
+
+        pll_register_string("No Posts", "No Posts");
     }
 
     function build_menu_items() {
