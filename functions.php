@@ -5,6 +5,26 @@
         pll_register_string("Translations", "Translations");
         pll_register_string("Share", "Share");
         pll_register_string("Recent Posts", "Recent Posts");
+        pll_register_string("Categories", "Categories");
+        pll_register_string("Tags", "Tags");
+
+        pll_register_string("January", "January");
+        pll_register_string("February", "February");
+        pll_register_string("March", "March");
+        pll_register_string("April", "April");
+        pll_register_string("May", "May");
+        pll_register_string("June", "June");
+        pll_register_string("July", "July");
+        pll_register_string("August", "August");
+        pll_register_string("September", "September");
+        pll_register_string("October", "October");
+        pll_register_string("November", "November");
+        pll_register_string("December", "December");
+
+        pll_register_string("Older", "Older");
+        pll_register_string("Newer", "Newer");
+
+        pll_register_string("Tagline", "Tagline");
     }
 
     function build_menu_items() {
@@ -48,8 +68,8 @@
             'format' => '?paged=%#%',
             'current' => max( 1, get_query_var('paged') ),
             'total' => $wp_query->max_num_pages,
-            'prev_text'    => __('« Daha yeni'),
-            'next_text'    => __('Daha eski »')
+            'prev_text'    => __('« ' . pll__("Older")),
+            'next_text'    => __(pll__("Newer") . ' »')
         ));
     }
 
@@ -92,5 +112,10 @@
             default:
                 return 'Read this post in ' . $lang;
         }
+    }
+
+    function get_post_date() {
+        $month = pll__(get_the_date('F'));
+        echo str_replace('%%%', $month, get_the_date('d %%% Y')) ;
     }
 ?>

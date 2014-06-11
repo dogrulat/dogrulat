@@ -46,8 +46,7 @@
             ?>
 
             <div class="homedate">
-                <span><?php $cur_date = get_the_date('d F Y'); echo $cur_date; ?>
-                </span>
+                <span><?php get_post_date(); ?></span>
             </div>
 
         </div> <!-- end of post-preview" -->

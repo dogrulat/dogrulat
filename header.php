@@ -70,7 +70,7 @@ if(trim($theme_options['favicon_url'])==='') {
 
       <div class="container">
         <div class="header-logo">
-            <a href="<?php echo home_url(); ?>">
+            <a href="<?php echo pll_home_url(); ?>">
                 <img src="<?php echo $theme_options['header_logo_url']; ?>" />
             </a>
         </div>
@@ -85,7 +85,7 @@ if(trim($theme_options['favicon_url'])==='') {
           <button type="button" class="navbar-toggle custom-border btn-search" data-toggle="collapse" data-target=".search-collapse">
             <span class="glyphicon glyphicon-search"></span>
           </button>
-          <a class="navbar-brand" href="<?php  echo home_url(); ?>">
+          <a class="navbar-brand" href="<?php echo pll_home_url(); ?>">
             <img src="http://www.dogrulat.com/wp-content/uploads/2014/05/dogrulat_logo2.png" height="46"/>
           </a>
         </div>

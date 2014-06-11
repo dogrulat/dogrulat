@@ -15,7 +15,7 @@
             ?> <?php the_title(); ?>
             </h1>
             <div class="post-date">
-                <span><?php $cur_date = get_the_date('d F Y'); echo $cur_date; ?></span>
+                <span><?php get_post_date(); ?></span>
             </div>
 
             <div class="post-translations">
@@ -62,8 +62,8 @@
                         <?php } ?>
                     </div>
                     
-                    <?php printf('<span>Kategori:</span> %s', get_the_category_list(', ')); ?><br />
-                    <?php the_tags('<span>Etiketler:</span>' . ' ', ', ', '<br />'); ?>
+                    <?php printf('<span>%s:</span> %s', pll__("Categories"), get_the_category_list(', ')); ?><br />
+                    <?php the_tags('<span>' . pll__("Tags") . ':</span>' . ' ', ', ', '<br />'); ?>
                     <?php edit_post_link('[Edit this entry]', '<br />', ''); ?>
                 </div>
             </div>
