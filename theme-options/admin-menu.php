@@ -1,4 +1,3 @@
-
 <?php
     /* This code is heavily ripped off from this tutorial
      * http://www.sitepoint.com/wordpress-options-panel/

@@ -3,6 +3,8 @@
 
     if(is_plugin_active('polylang/polylang.php')) {
         pll_register_string("Translations", "Translations");
+        pll_register_string("Share", "Share");
+        pll_register_string("Recent Posts", "Recent Posts");
     }
 
     function build_menu_items() {
@@ -76,7 +78,7 @@
         return $level;
     }
 
-    require_once(ABSPATH . '/wp-admin/includes/template.php');
+//    require_once(ABSPATH . '/wp-admin/includes/template.php');
     require_once('theme-options/admin-menu.php');
 
     add_theme_support('post-thumbnails');

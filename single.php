@@ -44,6 +44,24 @@
             <div class="article" id="post-<?php the_ID(); ?>">
                 <?php the_content(); ?>
                 <div class="postmetadata">
+                    <div class="post-sharing">
+                        <?php 
+                            if(is_plugin_active('simple-share-buttons-adder/simple-share-buttons-adder.php')) {
+                                echo do_shortcode('[ssba]') . '<br style="clear: both"/>';
+                            }
+                            else {
+                        ?>
+                            <div class="fb-share">
+                                <div class="fb-share-button" data-href="<?php echo get_permalink($post->ID); ?>" data-type="button_count"></div>
+                            </div>
+
+                            <div class="twitter-share">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="dogrulat">Tweet</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    
                     <?php printf('<span>Kategori:</span> %s', get_the_category_list(', ')); ?><br />
                     <?php the_tags('<span>Etiketler:</span>' . ' ', ', ', '<br />'); ?>
                     <?php edit_post_link('[Edit this entry]', '<br />', ''); ?>

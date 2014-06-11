@@ -296,6 +296,23 @@ p.truthiness {
   color:#555;
   clear:both;
 }
+
+.post .postmetadata .post-sharing {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.post-sharing .ssba img {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.post-sharing .fb-share {
+  float: left;
+  margin-right: 5px;
+}
+
 .post .postmetadata a {
   color:#065c9f !important;
   text-decoration:none !important;
@@ -312,7 +329,6 @@ p.truthiness {
 
 .post .article .postmetadata {
   width:auto;
-  padding-left: 5px; 
   float:none;
   padding-bottom:15px;
 }
@@ -325,7 +341,7 @@ p.truthiness {
   width: 260px;
   float: left;
   clear: left;
-  position: fixed;
+  /* position: fixed; */
 }
 
 #sidebar h2 {
@@ -354,6 +370,15 @@ p.truthiness {
 #translations {
   margin-top: 30px;
   margin-left: 5px;
+}
+
+#sharing {
+  margin-top: 30px;
+  margin-left: 5px;
+}
+
+#sharing .fb-share {
+  margin-bottom: 5px;
 }
 
 #recent-posts {
@@ -449,6 +474,10 @@ p.truthiness {
   }
 
   .post-translations {
+    display: none;
+  }
+
+  .post-sharing {
     display: none;
   }
 
