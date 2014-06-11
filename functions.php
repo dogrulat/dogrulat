@@ -75,4 +75,17 @@
     require_once('theme-options/admin-menu.php');
 
     add_theme_support('post-thumbnails');
+
+    pll_register_string("Translations", "Translations");
+
+    function translate_read_this($lang) {
+        switch($lang) {
+            case 'English':
+                return 'Read this post in English';
+            case 'Türkçe':
+                return 'Bu yazıyı Türkçe okuyun';
+            default:
+                return 'Read this post in ' . $lang;
+        }
+    }
 ?>

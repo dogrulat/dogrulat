@@ -10,6 +10,35 @@
     ?>
     </div>
 
+    <div id="translations">
+        <?php
+            include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+            if(is_plugin_active('polylang/polylang.php')) {
+                $all_langs_name = pll_languages_list(array('fields' => 'name'));
+                $all_langs_slug = pll_languages_list();
+                $curr_lang = pll_current_language();
+                $result = '';
+
+                for($i = 0; $i < count($all_langs_slug); $i = $i + 1) {
+
+                    if($all_langs_slug[$i] !== $curr_lang) {
+                        $trans_post_id = pll_get_post($post->ID, $all_langs_slug[$i]);
+                        if($trans_post_id) {
+                            $result = $result . '<li><a href="' . get_permalink($trans_post_id) . '">' . $all_langs_name[$i] . '</a></li>';
+                        }
+                    }
+                }
+
+                if($result !== '') {
+                    echo '<h2>'. pll__("Translations") .'</h2>';
+                    echo '<ul>' . $result . '</ul>';
+                }
+            }
+
+        ?>
+    </div>
+
     <div id="recent-posts">
         <h2>Son Yazılar</h2>
         <ul>

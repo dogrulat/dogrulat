@@ -317,11 +317,26 @@ p.truthiness {
   padding-bottom:15px;
 }
 
+.post-translations {
+  margin-bottom: 15px;
+}
+
 #sidebar {
   width: 260px;
   float: left;
   clear: left;
   position: fixed;
+}
+
+#sidebar h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+}
+
+#sidebar ul {
+  list-style: inherit;
+  font-size: 12px;
 }
 
 #truth-panel {
@@ -336,20 +351,14 @@ p.truthiness {
   font-size: 24px;
 }
 
-#recent-posts {
+#translations {
   margin-top: 30px;
   margin-left: 5px;
 }
 
-#recent-posts h2 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #777;
-}
-
-#recent-posts ul {
-  list-style: inherit;
-  font-size: 12px;
+#recent-posts {
+  margin-top: 30px;
+  margin-left: 5px;
 }
 
 #recent-posts li {
@@ -436,6 +445,10 @@ p.truthiness {
   }
 
   .post .title-truth {
+    display: none;
+  }
+
+  .post-translations {
     display: none;
   }
 

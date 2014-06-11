@@ -18,6 +18,29 @@
                 <span><?php $cur_date = get_the_date('d F Y'); echo $cur_date; ?></span>
             </div>
 
+            <div class="post-translations">
+            <?php
+                include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+                if(is_plugin_active('polylang/polylang.php')) {
+                    $all_langs_name = pll_languages_list(array('fields' => 'name'));
+                    $all_langs_slug = pll_languages_list();
+                    $curr_lang = pll_current_language();
+                    $result = '';
+
+                    for($i = 0; $i < count($all_langs_slug); $i = $i + 1) {
+
+                        if($all_langs_slug[$i] !== $curr_lang) {
+                            $trans_post_id = pll_get_post($post->ID, $all_langs_slug[$i]);
+                            if($trans_post_id) {
+                                echo '<a href="' . get_permalink($trans_post_id) . '">' . translate_read_this($all_langs_name[$i]) . '</a><br />';
+                            }
+                        }
+                    }
+                }
+
+            ?>
+            </div>
             <div class="article" id="post-<?php the_ID(); ?>">
                 <?php the_content(); ?>
                 <div class="postmetadata">
