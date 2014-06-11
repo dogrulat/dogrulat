@@ -12,8 +12,6 @@
 
     <div id="translations">
         <?php
-            include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
             if(is_plugin_active('polylang/polylang.php')) {
                 $all_langs_name = pll_languages_list(array('fields' => 'name'));
                 $all_langs_slug = pll_languages_list();

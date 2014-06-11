@@ -1,17 +1,16 @@
 <?php
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+    if(is_plugin_active('polylang/polylang.php')) {
+        pll_register_string("Translations", "Translations");
+    }
+
     function build_menu_items() {
-        $menu_list = '';
-        $menu_name = '';
 
-        // todo: there must be a better way to get the default menu name.
-        // just using the first menu
-        $menus = wp_get_nav_menus();
-        if(sizeof($menus) > 0) {
-            $menu_name = $menus[0]->name;
-        }
+        $menu_location = get_nav_menu_locations()['header-menu'];
 
-        if (($menu = wp_get_nav_menu_object($menu_name)) && (isset($menu))) {
-            $menu_items = wp_get_nav_menu_items($menu->term_id);
+        if (isset($menu_location)) {
+            $menu_items = wp_get_nav_menu_items($menu_location);
 
             foreach ((array) $menu_items as $key => $menu_item) {
                 $title = $menu_item->title;
@@ -75,8 +74,6 @@
     require_once('theme-options/admin-menu.php');
 
     add_theme_support('post-thumbnails');
-
-    pll_register_string("Translations", "Translations");
 
     function translate_read_this($lang) {
         switch($lang) {
