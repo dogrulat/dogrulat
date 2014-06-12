@@ -63,13 +63,11 @@
         <ul>
 <?php
     $max_count = 5;
-    $recent_posts = wp_get_recent_posts();
-    if(count($recent_posts) > $max_count) {
-        $recent_posts = array_slice($recent_posts, 0, $max_count);
-    }
+    $recent_posts = wp_get_recent_posts(array('post_status' => 'publish',
+                                              'numberposts' => $max_count));
 
     foreach( $recent_posts as $recent ){
-        echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+        echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="' . esc_attr($recent["post_title"]) . '" >' . $recent["post_title"].'</a></li>';
     }
 ?>
         </ul>
