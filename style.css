@@ -212,6 +212,14 @@ p.truthiness {
     color: rgba(32, 137, 69, 1) !important;
 }
 
+.hometitle .truthiness-cogudogru {
+    background-color: #918D8D !important;
+}
+
+.hometitle .truthiness-azdogru {
+    background-color: #918D8D !important;
+}
+
 .navlinks {
     width: 100%;
     margin: auto;
