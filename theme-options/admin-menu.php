@@ -37,6 +37,7 @@
     function register_and_build_fields() {
         register_setting('theme_options', 'theme_options', 'validate_setting');
         add_settings_section('main_section', 'Main Settings', 'section_cb', __FILE__);
+        add_settings_field('email', 'Contact Email:', 'email_setting', __FILE__, 'main_section');
         add_settings_field('header_logo_url', 'Header Logo URL:', 'header_logo_url_setting', __FILE__, 'main_section');
         add_settings_field('favicon_url', 'Favicon URL:', 'favicon_url_setting', __FILE__, 'main_section');
         add_settings_field('facebook_url', 'Facebook URL:', 'facebook_url_setting', __FILE__, 'main_section');
@@ -48,6 +49,11 @@
     }
 
     function section_cb() {}
+
+    function email_setting() {
+        $options = get_option('theme_options');
+        echo "<input name='theme_options[email]' type='text' value='{$options['email']}' />";
+    }
 
     function header_logo_url_setting() {
         $options = get_option('theme_options');

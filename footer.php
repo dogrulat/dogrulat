@@ -10,7 +10,7 @@
             <img src="<?php bloginfo('template_directory'); ?>/img/fb-logo.png" />
           </a>
         </span><br />
-        <span class="copyright">© 2014 Doğrulat</span> <br />
+        <span class="copyright">© 2014 <a href="mailto:<?php echo $theme_options['email']; ?>"><?php bloginfo('name'); ?></a></span> <br />
 
       </div>
     </div>
