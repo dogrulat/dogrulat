@@ -42,10 +42,50 @@
         if (isset($menu_location)) {
             $menu_items = wp_get_nav_menu_items($menu_location);
 
+            // here I am creating a data structure for menu items with submenus
+            // for the sake of simplicity there is only one level of submenus ie. no submenus of submenus
+            // since arrays are immutable in php, I had to use Linked Lists to append submenus to parents.
+            $menu_items_ds = array();
             foreach ((array) $menu_items as $key => $menu_item) {
-                $title = $menu_item->title;
-                $url = $menu_item->url;
-                $menu_list .= '<li><a href="' . $url . '">' . $title . '</a></li>';
+                if(!$menu_item->menu_item_parent) {
+                    array_push($menu_items_ds, array('title'=>$menu_item->title, 'url'=>$menu_item->url, 'ID'=>$menu_item->ID, 'children'=>new SplDoublyLinkedList()));
+                }
+                else {
+                    // find the parent
+                    for($i=0; $i< count($menu_items_ds); $i = $i + 1) {
+                        $menu_parent = $menu_items_ds[$i];
+
+                        if($menu_parent['ID'] == $menu_item->menu_item_parent) {
+                            $menu_parent['children']->push(array('title'=>$menu_item->title, 'url'=>$menu_item->url, 'ID'=>$menu_item->ID));
+                        }
+                    }
+                }
+            }
+
+            // creating the html from the data structure
+            foreach((array) $menu_items_ds as $menu_item) {
+                $title = $menu_item['title'];
+                $url = $menu_item['url'];
+
+                if($menu_item['children']->count()) {
+                    $children_list = $menu_item['children'];
+
+                    $menu_list .= '<li class="dropdown">';
+                    $menu_list .= '    <a class="dropdown-toggle custom-dd" data-toggle="dropdown" href="' . $url . '">' . $title . ' <b class="caret"></b></a>';
+                    $menu_list .= '    <ul class="dropdown-menu" role="menu">';
+
+                    $children_list->setIteratorMode(SplDoublyLinkedList::IT_MODE_FIFO);
+                    for ($children_list->rewind(); $children_list->valid(); $children_list->next()) {
+                        $current_child = $children_list->current();
+                        $menu_list .= '<li><a href="' . $current_child['url'] . '">' . $current_child['title'] . '</a></li>';
+                    }
+
+                    $menu_list .= '    </ul>';
+                    $menu_list .= '</li>';
+                }
+                else {
+                    $menu_list .= '<li><a href="' . $url . '">' . $title . '</a></li>';
+                }
             }
         }
 
