@@ -86,7 +86,7 @@ if(trim($theme_options['favicon_url'])==='') {
             <span class="glyphicon glyphicon-search"></span>
           </button>
           <a class="navbar-brand" href="<?php echo pll_home_url(); ?>">
-            <img src="http://www.dogrulat.com/wp-content/uploads/2014/05/dogrulat_logo2.png" height="46"/>
+            <img src="<?php echo $theme_options['header_logo_url']; ?>" height="46"/>
           </a>
         </div>
 
@@ -99,7 +99,7 @@ if(trim($theme_options['favicon_url'])==='') {
 
         <div class="collapse search-collapse">
           <form method="get" action="<?php bloginfo('url'); ?>/">
-            <input type="text" class="form-control" placeholder="Doğrulat.com'da Ara" name="s"/>
+            <input type="text" class="form-control" placeholder="<?php echo pll__("Search Blog"); ?>" name="s"/>
           </form>
         </div><!--/.search-collapse -->
       </div>

@@ -27,6 +27,7 @@
         pll_register_string("Tagline", "Tagline");
 
         pll_register_string("No Posts", "No Posts");
+        pll_register_string("Search Blog", "Search Blog");
     }
 
     function build_menu_items() {
