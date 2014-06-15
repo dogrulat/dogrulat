@@ -82,7 +82,7 @@ if(trim($theme_options['favicon_url'])==='') {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <button type="button" class="navbar-toggle custom-border btn-search" data-toggle="collapse" data-target=".search-collapse">
+          <button type="button" class="navbar-toggle custom-border btn-search" data-toggle="collapse" data-target=".search-collapse" title="<?php echo pll__("Search"); ?>">
             <span class="glyphicon glyphicon-search"></span>
           </button>
           <?php if(is_home() && $theme_options['display_language_switcher']) { ?>
@@ -102,7 +102,7 @@ if(trim($theme_options['favicon_url'])==='') {
           <ul class="nav navbar-nav custom-navbar">
             <?php echo build_menu_items(); ?>
             <li class="li-search">
-              <a href="#" data-toggle="collapse" data-target=".search-collapse" title="ara" class="glyphicon glyphicon-search"></a>
+              <a href="#" data-toggle="collapse" data-target=".search-collapse" title="<?php echo pll__("Search"); ?>" class="glyphicon glyphicon-search"></a>
             </li>
 
             <?php if(is_home() && $theme_options['display_language_switcher']) { ?>

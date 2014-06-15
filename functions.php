@@ -28,6 +28,7 @@
 
         pll_register_string("No Posts", "No Posts");
         pll_register_string("Search Blog", "Search Blog");
+        pll_register_string("Search", "Search");
         pll_register_string("Select Language", "Select Language");
     }
 
