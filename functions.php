@@ -28,8 +28,22 @@
 
         pll_register_string("No Posts", "No Posts");
         pll_register_string("Search Blog", "Search Blog");
+        pll_register_string("Select Language", "Select Language");
     }
 
+    function build_language_option_list() {
+        if(is_plugin_active('polylang/polylang.php')) {
+            $all_langs_name = pll_languages_list(array('fields' => 'name'));
+            $all_langs_slug = pll_languages_list();
+            $result = '';
+
+            for($i = 0; $i < count($all_langs_name); $i = $i + 1) {
+                $result .= '<li><a href="' . pll_home_url($all_langs_slug[$i]) . '">'. $all_langs_name[$i] . '</a></li>';
+            }
+
+            return $result;
+        }
+    }
     function build_menu_items() {
         $menu_list = '';
 
