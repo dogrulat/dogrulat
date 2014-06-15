@@ -42,6 +42,7 @@
         add_settings_field('favicon_url', 'Favicon URL:', 'favicon_url_setting', __FILE__, 'main_section');
         add_settings_field('facebook_url', 'Facebook URL:', 'facebook_url_setting', __FILE__, 'main_section');
         add_settings_field('twitter_url', 'Twitter URL:', 'twitter_url_setting', __FILE__, 'main_section');
+        add_settings_field('display_language_switcher', 'Show Language Switcher:', 'display_language_switcher_setting', __FILE__, 'main_section');
     }
 
     function validate_setting($theme_options) {
@@ -73,5 +74,11 @@
     function twitter_url_setting() {
         $options = get_option('theme_options');
         echo "<input name='theme_options[twitter_url]' type='text' value='{$options['twitter_url']}' />";
+    }
+
+    function display_language_switcher_setting() {
+        $options = get_option('theme_options');
+        $is_checked = $options['display_language_switcher'] == true ? "checked" : "";
+        echo "<input name='theme_options[display_language_switcher]' type='checkbox' ". $is_checked. " />";
     }
 ?>

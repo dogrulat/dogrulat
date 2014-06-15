@@ -85,7 +85,7 @@ if(trim($theme_options['favicon_url'])==='') {
           <button type="button" class="navbar-toggle custom-border btn-search" data-toggle="collapse" data-target=".search-collapse">
             <span class="glyphicon glyphicon-search"></span>
           </button>
-          <?php if(is_home()) { ?>
+          <?php if(is_home() && $theme_options['display_language_switcher']) { ?>
           <div class="dropdown navbar-toggle lang-switch">
             <span class="glyphicon glyphicon-globe" data-toggle="dropdown" title="<?php echo pll__('Select Language'); ?>"></span>
             <ul class="dropdown-menu">
@@ -105,7 +105,7 @@ if(trim($theme_options['favicon_url'])==='') {
               <a href="#" data-toggle="collapse" data-target=".search-collapse" title="ara" class="glyphicon glyphicon-search"></a>
             </li>
 
-            <?php if(is_home()) { ?>
+            <?php if(is_home() && $theme_options['display_language_switcher']) { ?>
             <li id="navbar-lang-switch" class="dropdown navbar-toggle lang-switch">
               <a href="#" class="glyphicon glyphicon-globe" data-toggle="dropdown" title="<?php echo pll__('Select Language'); ?>"></a>
               <ul class="dropdown-menu">
