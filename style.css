@@ -438,6 +438,19 @@ p.truthiness {
   font-weight: bold;
 }
 
+.post .article .post-summary {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+  color: #777;
+}
+
+.post .article>hr {
+  width: 250px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
 .post .article .postmetadata {
   width:auto;
   float:none;

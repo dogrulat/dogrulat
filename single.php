@@ -42,6 +42,8 @@
             ?>
             </div>
             <div class="article" id="post-<?php the_ID(); ?>">
+                <p class="post-summary"><?php echo get_post_meta( $post->ID, 'post_summary', true); ?></p>
+                <hr />
                 <?php the_content(); ?>
                 <div class="postmetadata">
                     <div class="post-sharing">
