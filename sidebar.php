@@ -23,7 +23,10 @@
                     if($all_langs_slug[$i] !== $curr_lang) {
                         $trans_post_id = pll_get_post($post->ID, $all_langs_slug[$i]);
                         if($trans_post_id) {
-                            $result = $result . '<li><a href="' . get_permalink($trans_post_id) . '">' . $all_langs_name[$i] . '</a></li>';
+                            // make sure the post is published
+                            if(get_post_status($trans_post_id) == 'publish') {
+                                $result = $result . '<li><a href="' . get_permalink($trans_post_id) . '">' . $all_langs_name[$i] . '</a></li>';
+                            }
                         }
                     }
                 }
