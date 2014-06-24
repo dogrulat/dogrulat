@@ -30,6 +30,13 @@
         pll_register_string("Search Blog", "Search Blog");
         pll_register_string("Search", "Search");
         pll_register_string("Select Language", "Select Language");
+
+        pll_register_string("YALAN", "YALAN");
+        pll_register_string("AZ DOĞRU", "AZ DOĞRU");
+        pll_register_string("YARI DOĞRU", "YARI DOĞRU");
+        pll_register_string("ÇOĞU DOĞRU", "ÇOĞU DOĞRU");
+        pll_register_string("DOĞRU", "DOĞRU");
+
     }
 
     function build_language_option_list() {

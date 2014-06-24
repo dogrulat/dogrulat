@@ -10,7 +10,7 @@
                 $truthiness = trim(get_post_meta( $post->ID, 'post_truthiness', true));
                 if($truthiness!=='') {
                     $level = get_truthiness_level($truthiness);
-                    printf('<span class="title-truth truthiness-%s">%s</span>', $level, $truthiness);
+                    printf('<span class="title-truth truthiness-%s">%s</span>', $level,  pll__($truthiness));
                 }
             ?> <?php the_title(); ?>
             </h1>

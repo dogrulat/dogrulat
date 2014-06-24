@@ -4,7 +4,7 @@
         $truthiness = trim(get_post_meta( $post->ID, 'post_truthiness', true));
         if($truthiness !== '') {
             $level = get_truthiness_level($truthiness);
-            printf('<h2 class="truthiness truthiness-%s">%s</h2>', $level, $truthiness);
+            printf('<h2 class="truthiness truthiness-%s">%s</h2>', $level, pll__($truthiness));
             printf('<div class="truth-level"><div class="level level-%s">&nbsp;</div></div>', $level);
         }
     ?>
