@@ -32,7 +32,7 @@ if(trim($theme_options['favicon_url'])==='') {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="<?php echo $theme_options['favicon_url']; ?>" type="image/x-icon">
-
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo bloginfo('rss2_url');?>" />
     <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
 
     <!-- Bootstrap core CSS -->
