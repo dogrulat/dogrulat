@@ -1,3 +1,27 @@
+// sets the opacity of the header tagline
+// to slowly fade in to view if there is room
+function showHeaderTagline() {
+    var $image = $('.header-logo .tagline');
+    var taglinePos = $image.position();
+    var imageWidth = $('.header-logo a img').width();
+    var cushion = 40;
+    var diff = Math.min(cushion, Math.max(0, taglinePos.left - imageWidth));
+    if(Math.floor(diff / cushion)) {
+        $image.css({'transition': 'opacity 2s', 'opacity': 1});
+    }
+    else {
+        $image.css({'transition': 'opacity 0s', 'opacity': 0});
+    }
+}
+
+// resizes header image based on the stroll position
+// here I know that my original image is 140px and and I want it to be 
+// 46px the minimum.
+// maybe I can take care of the hardcoded values later
+function resizeHeaderImage() {
+     $(".header-image").height(Math.max(46, 140 - ($window.scrollTop() / 15)));
+}
+
 function collapseThreeToTwo() {
     // console.log('collapseThreeToTwo');
 
@@ -232,3 +256,16 @@ $window.resize(function () {
     }
 
 });
+
+$window.resize(function() {
+    showHeaderTagline();
+});
+
+$window.scroll(function() {
+    resizeHeaderImage();
+    showHeaderTagline();
+});
+
+resizeHeaderImage();
+showHeaderTagline();
+

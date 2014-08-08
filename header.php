@@ -71,8 +71,9 @@ if(trim($theme_options['favicon_url'])==='') {
       <div class="container">
         <div class="header-logo">
             <a href="<?php echo pll_home_url(); ?>">
-                <img src="<?php echo $theme_options['header_logo_url']; ?>" />
+                <img src="<?php echo $theme_options['header_logo_url']; ?>" class="header-image"/>
             </a>
+            <span class="tagline"><?php echo pll__("Tagline"); ?></span>
         </div>
 
         <div class="navbar-header deneme">

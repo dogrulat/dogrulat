@@ -4,7 +4,7 @@ Theme URI: http://ahmetkizilay.com/blog
 Author: Ahmet Kizilay
 Author URI: http://github.com/artsince
 Description: Custom Theme for Dogrulat.com
-Version: 0.6.4
+Version: 0.6.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -214,7 +214,7 @@ div.lang-switch {
 }
 
 .header-logo {
-  display: none;  
+  display: none;
 }
 
 .post-preview {
@@ -530,6 +530,10 @@ p.truthiness {
    padding-top: 200px;
   }
 
+  .container {
+      width: 100%;
+  }
+
   strong a:before {
     margin-top: -210px;
     height: 210px;
@@ -538,6 +542,15 @@ p.truthiness {
   .header-logo {
     display: block;
     margin-left: 16px;
+    position: relative;
+  }
+
+  .header-logo .tagline {
+    position: absolute;
+    bottom: 9px; right: 0;
+    color: #8d8d8d;
+    font-style: italic;
+    font-size: 18px;
   }
 
   .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
@@ -592,6 +605,8 @@ p.truthiness {
 }
 
 @media (min-width: 992px) {
+
+
   .posts {
     display: flex;
     margin: auto;
@@ -628,6 +643,10 @@ p.truthiness {
 }
 
 @media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+
   .posts {
     display: flex;
     margin: auto;
