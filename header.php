@@ -29,11 +29,26 @@ if(trim($theme_options['favicon_url'])==='') {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="<?php if(is_single()) { echo get_post_meta( $post->ID, 'post_summary', true); } ?>">
     <meta name="author" content="">
+    <?php if(is_single()) { ?>
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="dogrulat">
+      <meta name="twitter:title" content="<?php the_title(); ?>">
+      <meta name="twitter:description" content="<?php echo get_post_meta( $post->ID, 'post_summary', true); ?>">
+      <meta name="twitter:creator" content="dogrulat">
+      <meta name="twitter:image:src" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>">
+      
+      <meta property="og:title" content="<?php the_title(); ?>">
+      <meta property="og:description" content="<?php echo get_post_meta( $post->ID, 'post_summary', true); ?>">
+      <meta property="og:type" content="article">
+      <meta property="og:url" content="<?php echo get_permalink(); ?>">
+      <meta property="og:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>">
+      <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+    <?php } ?> 
     <link rel="shortcut icon" href="<?php echo $theme_options['favicon_url']; ?>" type="image/x-icon">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo bloginfo('rss2_url');?>" />
-    <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
+    <title><?php bloginfo('name'); ?><?php if(is_single()) { wp_title(); } else { echo ' » '; bloginfo('description'); }?></title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
